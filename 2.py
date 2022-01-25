@@ -12,12 +12,6 @@ if str_winvers == Win_64_text:
     fantasy_zip.extractall('C:\\Ps\\Store')
     fantasy_zip.close()
     print ("unpack 64 to C")
-    proc = subprocess.Popen(['powershell', 'cd C:\PS\Store'])
-    proc.wait()
-    proc = subprocess.Popen(['powershell', 'Get-Childitem $Path -filter *.appx| %{Add-AppxPackage -Path $_.FullName}'])
-    proc.wait()
-    proc = subprocess.Popen(['powershell', 'Get-Childitem $Path -filter *.appxbundle | %{Add-AppxPackage -Path $_.FullName}'])
-    proc.wait()
 
 elif str_winvers == Win_32_text:
     fantasy_zip = zipfile.ZipFile('pack_32.zip')
